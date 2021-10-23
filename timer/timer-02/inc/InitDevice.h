@@ -24,7 +24,7 @@ PORTS_1_enter_DefaultMode_from_RESET (void);
 extern void
 PBCFG_0_enter_DefaultMode_from_RESET (void);
 extern void
-VREF_0_enter_DefaultMode_from_RESET (void);
+TIMER_SETUP_0_enter_DefaultMode_from_RESET (void);
 // [Config(Per-Module Mode)Transition Prototypes]$
 
 #endif

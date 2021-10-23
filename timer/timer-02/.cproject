@@ -279,7 +279,7 @@
         	
     </storageModule>
     	
-    <storageModule moduleId="com.silabs.ss.framework.ide.project.core.cpp" project.generation="5" projectCommon.boardIds="efm8bb1lcba:0.0.0.A00" projectCommon.buildArtifactType="EXE" projectCommon.copiedFiles="[{&quot;generated&quot;:false,&quot;projectPath&quot;:&quot;src/timer-02_main.c&quot;,&quot;originalPath&quot;:&quot;C:\\Users\\kovac\\AppData\\Local\\Temp\\expandedFile16222836447710880027&quot;,&quot;content&quot;:-144209222}]" projectCommon.ideId="simplicity-ide" projectCommon.importModeId="LINK_LIBRARIES" projectCommon.partId="mcu.8051.efm8.bb1.efm8bb10f8g-a-qsop24" projectCommon.sdkId="com.silabs.sdk.8051:4.2.1.0_-1219907951" projectCommon.toolchainId="com.silabs.ss.tool.ide.c8051.toolchain.keil.cdt:9.60.0"/>
+    <storageModule moduleId="com.silabs.ss.framework.ide.project.core.cpp" project.generation="17" projectCommon.boardIds="efm8bb1lcba:0.0.0.A00" projectCommon.buildArtifactType="EXE" projectCommon.copiedFiles="[{&quot;generated&quot;:false,&quot;projectPath&quot;:&quot;src/timer-02_main.c&quot;,&quot;originalPath&quot;:&quot;C:\\Users\\kovac\\AppData\\Local\\Temp\\expandedFile16222836447710880027&quot;,&quot;content&quot;:-144209222}]" projectCommon.ideId="simplicity-ide" projectCommon.importModeId="LINK_LIBRARIES" projectCommon.partId="mcu.8051.efm8.bb1.efm8bb10f8g-a-qsop24" projectCommon.sdkId="com.silabs.sdk.8051:4.2.1.0_-1219907951" projectCommon.toolchainId="com.silabs.ss.tool.ide.c8051.toolchain.keil.cdt:9.60.0"/>
     	
     <storageModule moduleId="cdtBuildSystem" version="4.0.0">
         		

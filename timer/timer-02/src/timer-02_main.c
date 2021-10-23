@@ -15,9 +15,14 @@
 // [Generated Includes]$
 
 #define ZERO 0
+#define ONE 1
 
 SI_SBIT (ONBOARD_LED, SFR_P1, 4U);
+//SI_SBIT (TCON_TF0, SFR_TCON, 5U);
 
+volatile uint8_t counter;
+volatile uint8_t i;
+volatile uint8_t max;
 //-----------------------------------------------------------------------------
 // SiLabs_Startup() Routine
 // ----------------------------------------------------------------------------
@@ -39,12 +44,20 @@ int main (void)
 {
   // Call hardware initialization routine
   enter_DefaultMode_from_RESET();
-  
-  ONBOARD_LED = ZERO;
+  max = 10;
+
 
   while (1) 
   {
     // $[Generated Run-time code]
     // [Generated Run-time code]$
+
+    //delay
+     for (i = 0; i < max; ++i) {
+         while (!TCON_TF0);
+         TCON_TF0 = 0;
+    }
+
+      ONBOARD_LED = ZERO;
   }                             
 }
