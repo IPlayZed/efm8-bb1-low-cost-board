@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   TIMER_02_MAIN                                                     10/23/2021 10:31:20 PAGE 1   
+C51 COMPILER V9.60.0.0   TIMER_02_MAIN                                                     10/23/2021 10:38:40 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TIMER_02_MAIN
@@ -60,23 +60,25 @@ line level    source
   46   1        enter_DefaultMode_from_RESET();
   47   1        max = 10;
   48   1      
-  49   1      
-  50   1        while (1) 
-  51   1        {
-C51 COMPILER V9.60.0.0   TIMER_02_MAIN                                                     10/23/2021 10:31:20 PAGE 2   
+  49   1        //ONBOARD_LED = ONE;
+  50   1      
+  51   1        while (1) 
+C51 COMPILER V9.60.0.0   TIMER_02_MAIN                                                     10/23/2021 10:38:40 PAGE 2   
 
-  52   2          // $[Generated Run-time code]
-  53   2          // [Generated Run-time code]$
-  54   2      
-  55   2          //delay
-  56   2           for (i = 0; i < max; ++i) {
-  57   3               while (!TCON_TF0);
-  58   3               TCON_TF0 = 0;
-  59   3          }
-  60   2      
-  61   2            ONBOARD_LED = ZERO;
-  62   2        }                             
-  63   1      }
+  52   1        {
+  53   2          // $[Generated Run-time code]
+  54   2          // [Generated Run-time code]$
+  55   2      
+  56   2          //delay
+  57   2           for (i = 0; i < max; ++i) {
+  58   3               while (!TCON_TF0);
+  59   3               TCON_TF0 = 0;
+  60   3          }
+  61   2      
+  62   2           ONBOARD_LED = ZERO;
+  63   2           //ONBOARD_LED = !ONBOARD_LED;
+  64   2        }                             
+  65   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE

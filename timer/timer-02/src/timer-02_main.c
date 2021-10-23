@@ -46,6 +46,7 @@ int main (void)
   enter_DefaultMode_from_RESET();
   max = 10;
 
+  //ONBOARD_LED = ONE;
 
   while (1) 
   {
@@ -58,6 +59,7 @@ int main (void)
          TCON_TF0 = 0;
     }
 
-      ONBOARD_LED = ZERO;
+     ONBOARD_LED = ZERO;
+     //ONBOARD_LED = !ONBOARD_LED;
   }                             
 }
