@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   TIMER_06_MAIN                                                     10/23/2021 15:38:11 PAGE 1   
+C51 COMPILER V9.60.0.0   TIMER_06_MAIN                                                     10/23/2021 16:58:46 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TIMER_06_MAIN
@@ -35,43 +35,40 @@ line level    source
   21          // pin declaration
   22          #define LED0 P1_B4
   23          
-  24          extern uint8_t counter;
-  25          
-  26          
-  27          
-  28          //-----------------------------------------------------------------------------
-  29          // SiLabs_Startup() Routine
-  30          // ----------------------------------------------------------------------------
-  31          // This function is called immediately after reset, before the initialization
-  32          // code is run in SILABS_STARTUP.A51 (which runs before main() ). This is a
-  33          // useful place to disable the watchdog timer, which is enable by default
-  34          // and may trigger before main() in some instances.
-  35          //-----------------------------------------------------------------------------
-  36          void SiLabs_Startup (void)
-  37          {
-  38   1        // $[SiLabs Startup]
-  39   1        // [SiLabs Startup]$
-  40   1      }
-  41          
-  42          //-----------------------------------------------------------------------------
-  43          // main() Routine
-  44          // ----------------------------------------------------------------------------
-  45          int main (void)
-  46          {
-  47   1        // Call hardware initialization routine
-  48   1        enter_DefaultMode_from_RESET();
-  49   1        
-  50   1        while (1) 
-  51   1        {
-C51 COMPILER V9.60.0.0   TIMER_06_MAIN                                                     10/23/2021 15:38:11 PAGE 2   
+  24          
+  25          //-----------------------------------------------------------------------------
+  26          // SiLabs_Startup() Routine
+  27          // ----------------------------------------------------------------------------
+  28          // This function is called immediately after reset, before the initialization
+  29          // code is run in SILABS_STARTUP.A51 (which runs before main() ). This is a
+  30          // useful place to disable the watchdog timer, which is enable by default
+  31          // and may trigger before main() in some instances.
+  32          //-----------------------------------------------------------------------------
+  33          void SiLabs_Startup (void)
+  34          {
+  35   1        // $[SiLabs Startup]
+  36   1        // [SiLabs Startup]$
+  37   1      }
+  38          
+  39          //-----------------------------------------------------------------------------
+  40          // main() Routine
+  41          // ----------------------------------------------------------------------------
+  42          int main (void)
+  43          {
+  44   1        // Call hardware initialization routine
+  45   1        enter_DefaultMode_from_RESET();
+  46   1        
+  47   1        while (1) 
+  48   1        {
+  49   2          // $[Generated Run-time code]
+  50   2          // [Generated Run-time code]$
+  51   2      
+C51 COMPILER V9.60.0.0   TIMER_06_MAIN                                                     10/23/2021 16:58:46 PAGE 2   
 
-  52   2          // $[Generated Run-time code]
-  53   2          // [Generated Run-time code]$
-  54   2      
-  55   2            while (!TMR2CN0_TF2H);
-  56   2            LED0 = !LED0;
-  57   2        }                             
-  58   1      }
+  52   2            while (!TMR2CN0_TF2H);
+  53   2            LED0 = !LED0;
+  54   2        }                             
+  55   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE

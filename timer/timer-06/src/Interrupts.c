@@ -23,6 +23,5 @@ volatile uint8_t counter = 0;
 SI_INTERRUPT (TIMER2_ISR, TIMER2_IRQn)
   {
   TMR2CN0_TF2H = 0;
-  counter++;
   }
 

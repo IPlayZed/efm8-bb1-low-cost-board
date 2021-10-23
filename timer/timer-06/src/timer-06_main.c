@@ -21,9 +21,6 @@
 // pin declaration
 #define LED0 P1_B4
 
-extern uint8_t counter;
-
-
 
 //-----------------------------------------------------------------------------
 // SiLabs_Startup() Routine
