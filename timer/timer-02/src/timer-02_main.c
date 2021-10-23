@@ -14,6 +14,10 @@
 // $[Generated Includes]
 // [Generated Includes]$
 
+#define ZERO 0
+
+SI_SBIT (ONBOARD_LED, SFR_P1, 4U);
+
 //-----------------------------------------------------------------------------
 // SiLabs_Startup() Routine
 // ----------------------------------------------------------------------------
@@ -36,6 +40,8 @@ int main (void)
   // Call hardware initialization routine
   enter_DefaultMode_from_RESET();
   
+  ONBOARD_LED = ZERO;
+
   while (1) 
   {
     // $[Generated Run-time code]

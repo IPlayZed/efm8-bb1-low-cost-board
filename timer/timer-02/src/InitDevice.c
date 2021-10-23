@@ -23,7 +23,10 @@ extern void
 enter_DefaultMode_from_RESET (void)
 {
   // $[Config Calls]
+  WDT_0_enter_DefaultMode_from_RESET ();
+  PORTS_1_enter_DefaultMode_from_RESET ();
   PBCFG_0_enter_DefaultMode_from_RESET ();
+  VREF_0_enter_DefaultMode_from_RESET ();
   // [Config Calls]$
 
 }
@@ -47,6 +50,94 @@ PBCFG_0_enter_DefaultMode_from_RESET (void)
 
   // $[XBR1 - Port I/O Crossbar 1]
   // [XBR1 - Port I/O Crossbar 1]$
+
+}
+
+extern void
+WDT_0_enter_DefaultMode_from_RESET (void)
+{
+  // $[Watchdog Timer Init Variable Declarations]
+  uint32_t i;
+  bool ea;
+  // [Watchdog Timer Init Variable Declarations]$
+
+  // $[WDTCN - Watchdog Timer Control]
+  // Deprecated
+  // [WDTCN - Watchdog Timer Control]$
+
+  // $[WDTCN_2 - Watchdog Timer Control]
+
+  // Feed WDT timer before disabling (Erratum WDT_E102)
+  WDTCN = 0xA5;
+
+  // Add 2 LFO cycle delay before disabling WDT (Erratum WDT_E102)
+  for (i = 0; i < (2 * 3062500UL) / (10000 * 3); i++)
+    {
+      NOP ();
+    }
+
+  // Disable WDT
+  ea = IE_EA;
+  IE_EA = 0;
+  WDTCN = 0xDE;
+  WDTCN = 0xAD;
+  IE_EA = ea;
+
+  // [WDTCN_2 - Watchdog Timer Control]$
+
+}
+
+extern void
+VREF_0_enter_DefaultMode_from_RESET (void)
+{
+  // $[REF0CN - Voltage Reference Control]
+  /***********************************************************************
+   - Disable the Temperature Sensor
+   - The ADC0 ground reference is the GND pin
+   - The internal reference operates at 1.65 V nominal
+   - The ADC0 voltage reference is the VDD pin
+   ***********************************************************************/
+  REF0CN = REF0CN_TEMPE__TEMP_DISABLED | REF0CN_GNDSL__GND_PIN
+      | REF0CN_IREFLVL__1P65 | REF0CN_REFSL__VDD_PIN;
+  // [REF0CN - Voltage Reference Control]$
+
+}
+
+extern void
+PORTS_1_enter_DefaultMode_from_RESET (void)
+{
+
+  // $[P1 - Port 1 Pin Latch]
+  // [P1 - Port 1 Pin Latch]$
+
+  // $[P1MDOUT - Port 1 Output Mode]
+  /***********************************************************************
+   - P1.0 output is open-drain
+   - P1.1 output is open-drain
+   - P1.2 output is open-drain
+   - P1.3 output is open-drain
+   - P1.4 output is push-pull
+   - P1.5 output is open-drain
+   - P1.6 output is open-drain
+   - P1.7 output is open-drain
+   ***********************************************************************/
+  P1MDOUT = P1MDOUT_B0__OPEN_DRAIN | P1MDOUT_B1__OPEN_DRAIN
+      | P1MDOUT_B2__OPEN_DRAIN | P1MDOUT_B3__OPEN_DRAIN | P1MDOUT_B4__PUSH_PULL
+      | P1MDOUT_B5__OPEN_DRAIN | P1MDOUT_B6__OPEN_DRAIN
+      | P1MDOUT_B7__OPEN_DRAIN;
+  // [P1MDOUT - Port 1 Output Mode]$
+
+  // $[P1MDIN - Port 1 Input Mode]
+  // [P1MDIN - Port 1 Input Mode]$
+
+  // $[P1SKIP - Port 1 Skip]
+  // [P1SKIP - Port 1 Skip]$
+
+  // $[P1MASK - Port 1 Mask]
+  // [P1MASK - Port 1 Mask]$
+
+  // $[P1MAT - Port 1 Match]
+  // [P1MAT - Port 1 Match]$
 
 }
 
